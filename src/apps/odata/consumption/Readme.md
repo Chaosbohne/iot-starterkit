@@ -28,7 +28,7 @@ Data tables are identified by their message type id (for better clarity the sche
 
 ## Supported queries
 
-This section explains all ODATA queries that are supported by the Message Management Service. For better clarity the root URI is asigned to **rootUrl**.
+This section explains all ODATA queries that are supported by the Message Management Service. For better clarity the root URI is assigned to **rootUrl**.
 
 *  **rootUrl** = /com.sap.iotservices.mms/v1/api/http/app.svc
 
@@ -121,3 +121,11 @@ Get top 5 messages skipped by 10 messages stored in a specific table as JSON
 Get top 5 messages ordered by C_VALUE ascending stored in a specific table as JSON 
 
 * GET: **&lt;rootUrl&gt;/&lt;tableName&gt;?$top=5&$orderby=C_VALUE asc&$format=json**
+
+Get all messaged where C_VALUE equals 40 in a specific table
+
+* GET: **&lt;rootUrl&gt;/&lt;tableName&gt;?$filter=C_VALUE eq '40'**
+
+Get top 5 messages where C_VALUE equals 40 in a specific table as JSON
+
+* GET: **&lt;rootUrl&gt;/&lt;tableName&gt;?$filter=C_VALUE eq '40'&$top=5&$format=json**
